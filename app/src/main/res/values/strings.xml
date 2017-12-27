@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ngoprek PC</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="processor_fragment">Processor</string>
+    <string name="ram_fragment">RAM</string>
+    <string name="vga_fragment">VGA</string>
+    <string name="hdd_fragment">HDD</string>
+</resources>
