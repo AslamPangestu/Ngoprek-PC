@@ -20,33 +20,6 @@ public class MainActivity extends AppCompatActivity implements HddFragment.OnFra
         ,RamFragment.OnFragmentInteractionListener
         ,VgaFragment.OnFragmentInteractionListener {
 
-    GridView grid;
-
-    String[] name = {
-            "AMD A10-7400P",
-            "AMD A10-7400P",
-            "AMD A10-7400P",
-            "AMD A10-7400P",
-            "AMD A10-7400P",
-            "AMD A10-7400P"
-    };
-    int[] id_image = {
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_foreground,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_foreground,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_foreground
-    };
-    String[] price = {
-            "Rp 5.000.000",
-            "Rp 5.000.000",
-            "Rp 5.000.000",
-            "Rp 5.000.000",
-            "Rp 5.000.000",
-            "Rp 5.000.000"
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,17 +34,6 @@ public class MainActivity extends AppCompatActivity implements HddFragment.OnFra
 
         TabLayout tabLayout = findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
-
-        CustomGrid gridAdapter = new CustomGrid
-                (this,name,id_image,price);
-        grid = findViewById(R.id.grid_view);
-        grid.setAdapter(gridAdapter);
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this,name[+i],Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

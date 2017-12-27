@@ -20,7 +20,7 @@ public class CustomGrid extends BaseAdapter{
     private final String[] price;
     private final int[] id_image;
 
-    public CustomGrid(MainActivity c, String[] name, int[] id_image, String[] price) {
+    public CustomGrid(Context c, String[] name, int[] id_image, String[] price) {
             mContext = c;
             this.name = name;
             this.price = price;
@@ -45,13 +45,13 @@ public class CustomGrid extends BaseAdapter{
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(int i, View convertView, ViewGroup viewGroup) {
         View grid;
         LayoutInflater inflater =
                 (LayoutInflater) mContext.getSystemService
                         (Context.LAYOUT_INFLATER_SERVICE);
 
-        if (view == null){
+        if (convertView == null){
             grid = new View(mContext);
             grid = inflater.inflate(R.layout.grid_single,null);
 
@@ -63,7 +63,7 @@ public class CustomGrid extends BaseAdapter{
             gambar.setImageResource(id_image[i]);
             hargaText.setText(price[i]);
         }else {
-            grid = view;
+            grid = convertView;
         }
         return grid;
     }
