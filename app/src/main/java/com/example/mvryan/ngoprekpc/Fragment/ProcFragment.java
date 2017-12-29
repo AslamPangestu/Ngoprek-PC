@@ -1,16 +1,22 @@
 package com.example.mvryan.ngoprekpc.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.mvryan.ngoprekpc.CustomGrid;
+import com.example.mvryan.ngoprekpc.DetailActivity;
 import com.example.mvryan.ngoprekpc.R;
+import com.google.gson.Gson;
 
 
 /**
@@ -22,6 +28,9 @@ import com.example.mvryan.ngoprekpc.R;
  * create an instance of this fragment.
  */
 public class ProcFragment extends Fragment {
+
+    GridView gridView;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -66,10 +75,27 @@ public class ProcFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_proc, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_proc,null);
+
+        gridView = view.findViewById(R.id.grid_view);
+        final CustomGrid adapterGrid = new CustomGrid(getContext());
+        gridView.setAdapter(adapterGrid);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getContext(),DetailActivity.class);
+                intent.putExtra("position", i);
+                startActivity(intent);
+            }
+        });
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

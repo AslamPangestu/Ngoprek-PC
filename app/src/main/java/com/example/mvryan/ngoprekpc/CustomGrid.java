@@ -13,21 +13,52 @@ import android.widget.TextView;
  * Created by mvryan on 22/12/17.
  */
 
-public class CustomGrid extends BaseAdapter{
+public class CustomGrid extends BaseAdapter {
 
-    private Context mContext;
-    private final String[] name;
-    private final String[] price;
-    private final int[] id_image;
+    Context mContext;
+    String[] name = {
+            "AMD A10-7400P",
+            "AMD A10-8400P",
+            "AMD A10-9400P",
+            "AMD A10-7500P",
+            "AMD A10-7600P",
+            "AMD A10-7700P"
+    };
+    int[] id_image = {
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher,
+            R.mipmap.ic_launcher
+    };
+    String[] price = {
+            "Rp 5.000.000",
+            "Rp 6.000.000",
+            "Rp 4.000.000",
+            "Rp 2.000.000",
+            "Rp 7.000.000",
+            "Rp 1.000.000"
+    };
+    String[] desc = {
+            "coba 1",
+            "coba 2",
+            "coba 3",
+            "coba 4",
+            "coba 5",
+            "coba 6",
+    };
 
-    public CustomGrid(Context c, String[] name, int[] id_image, String[] price) {
-            mContext = c;
-            this.name = name;
-            this.price = price;
-            this.id_image = id_image;
+    public CustomGrid(Context context, String[] name, int[] id_image, String[] price) {
+        this.mContext = context;
+        this.name = name;
+        this.price = price;
+        this.id_image = id_image;
     }
 
-    //private final int[] id;
+    public CustomGrid(Context context) {
+        this.mContext = context;
+    }
 
     @Override
     public int getCount() {
@@ -36,36 +67,29 @@ public class CustomGrid extends BaseAdapter{
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return name[i];
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
-        View grid;
-        LayoutInflater inflater =
-                (LayoutInflater) mContext.getSystemService
-                        (Context.LAYOUT_INFLATER_SERVICE);
 
-        if (convertView == null){
-            grid = new View(mContext);
-            grid = inflater.inflate(R.layout.grid_single,null);
-
-            TextView nameText = grid.findViewById(R.id.nama_txt);
-            ImageView gambar = grid.findViewById(R.id.grid_image);
-            TextView hargaText = grid.findViewById(R.id.harga_txt);
-
-            nameText.setText(name[i]);
-            gambar.setImageResource(id_image[i]);
-            hargaText.setText(price[i]);
-        }else {
-            grid = convertView;
+        if (convertView == null) {
+            LayoutInflater inflater =
+                    (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.grid_single, null);
         }
-        return grid;
+        TextView nameText = convertView.findViewById(R.id.nama_txt);
+        ImageView gambar = convertView.findViewById(R.id.grid_image);
+        TextView hargaText = convertView.findViewById(R.id.harga_txt);
+        nameText.setText(name[i]);
+        gambar.setImageResource(id_image[i]);
+        hargaText.setText(price[i]);
+        return convertView;
     }
 
     @Nullable
