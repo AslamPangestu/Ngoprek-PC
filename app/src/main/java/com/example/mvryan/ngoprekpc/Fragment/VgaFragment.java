@@ -11,8 +11,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.example.mvryan.ngoprekpc.CustomGrid;
-import com.example.mvryan.ngoprekpc.DetailActivity;
+import com.example.mvryan.ngoprekpc.CustomGrid.HddGrid;
+import com.example.mvryan.ngoprekpc.CustomGrid.VgaGrid;
+import com.example.mvryan.ngoprekpc.Detail.DetailActivityProc;
 import com.example.mvryan.ngoprekpc.R;
 
 
@@ -75,12 +76,12 @@ public class VgaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_proc,null);
 
         gridView = view.findViewById(R.id.grid_view);
-        final CustomGrid adapterGrid = new CustomGrid(getContext());
+        final VgaGrid adapterGrid = new VgaGrid(getContext());
         gridView.setAdapter(adapterGrid);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getContext(),DetailActivity.class);
+                Intent intent = new Intent(getContext(),DetailActivityProc.class);
                 intent.putExtra("position", i);
                 startActivity(intent);
             }

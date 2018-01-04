@@ -1,4 +1,4 @@
-package com.example.mvryan.ngoprekpc;
+package com.example.mvryan.ngoprekpc.CustomGrid;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -9,54 +9,57 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mvryan.ngoprekpc.R;
+
 /**
  * Created by mvryan on 22/12/17.
  */
 
-public class CustomGrid extends BaseAdapter {
+public class RamGrid extends BaseAdapter {
 
-    Context mContext;
-    String[] name = {
-            "AMD A10-7400P",
-            "AMD A10-8400P",
-            "AMD A10-9400P",
-            "AMD A10-7500P",
-            "AMD A10-7600P",
+    public Context mContext;
+    public String[] name = {
+            "ASGARD LEORICE DDR4 HARDCORE GAMING SERIES",
+            "Adata DDR4 PC19200 32GB",
+            "Vispro DDR4 PC17000 8GB",
+            "KLEVV DDR4 CRASS II PC24000",
+            "Adata DDR4 XPG PC22400 32GB",
             "AMD A10-7700P"
     };
-    int[] id_image = {
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher
+    public int[] id_image = {
+            R.drawable.ram1,
+            R.drawable.ram2,
+            R.drawable.ram3,
+            R.drawable.ram4,
+            R.drawable.ram5
     };
-    String[] price = {
-            "Rp 5.000.000",
-            "Rp 6.000.000",
-            "Rp 4.000.000",
-            "Rp 2.000.000",
-            "Rp 7.000.000",
-            "Rp 1.000.000"
+    public String[] price = {
+            "Rp 3.430.000",
+            "Rp 3.560.000",
+            "Rp 910.000",
+            "Rp 2.375.000",
+            "Rp 3.290.000"
     };
-    String[] desc = {
-            "coba 1",
-            "coba 2",
+    public String[] desc = {
+            "support amd ryzen.\n" +
+                    "\n" +
+                    "ada fitur RGB.\n" +
+                    "\n" +
+                    "Speed 2400 MHZ",
+            "gaming series memiliki beberapa pilihan kecepatan, 2133, 2400, 2800 dan 3200 Mhz sudah dilengkapi headspreader.",
             "coba 3",
             "coba 4",
-            "coba 5",
-            "coba 6",
+            "coba 5"
     };
 
-    public CustomGrid(Context context, String[] name, int[] id_image, String[] price) {
+    public RamGrid(Context context, String[] name, int[] id_image, String[] price) {
         this.mContext = context;
         this.name = name;
         this.price = price;
         this.id_image = id_image;
     }
 
-    public CustomGrid(Context context) {
+    public RamGrid(Context context) {
         this.mContext = context;
     }
 
