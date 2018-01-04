@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mvryan.ngoprekpc.CustomGrid.HddGrid;
+import com.example.mvryan.ngoprekpc.CustomGrid.RamGrid;
 import com.example.mvryan.ngoprekpc.R;
 
 /**
@@ -26,17 +27,17 @@ public class DetailActivityRam extends AppCompatActivity {
 
         pos = i.getExtras().getInt("position");
 
-        final HddGrid hddGrid = new HddGrid(this);
+        final RamGrid ramGrid = new RamGrid(this);
 
         TextView judul = findViewById(R.id.judul);
         ImageView gambar = findViewById(R.id.img);
         TextView desc = findViewById(R.id.desc);
         TextView harga = findViewById(R.id.price);
 
-        judul.setText(hddGrid.name[pos]);
-        gambar.setImageResource(hddGrid.id_image[pos]);
-        desc.setText(hddGrid.desc[pos]);
-        harga.setText(hddGrid.price[pos]);
+        judul.setText(ramGrid.name[pos]);
+        gambar.setImageResource(ramGrid.id_image[pos]);
+        desc.setText(ramGrid.desc[pos]);
+        harga.setText(ramGrid.price[pos]);
 
     }
 }

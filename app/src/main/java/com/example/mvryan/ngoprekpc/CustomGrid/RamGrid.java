@@ -23,8 +23,7 @@ public class RamGrid extends BaseAdapter {
             "Adata DDR4 PC19200 32GB",
             "Vispro DDR4 PC17000 8GB",
             "KLEVV DDR4 CRASS II PC24000",
-            "Adata DDR4 XPG PC22400 32GB",
-            "AMD A10-7700P"
+            "Adata DDR4 XPG PC22400 32GB"
     };
     public int[] id_image = {
             R.drawable.ram1,

@@ -16,7 +16,7 @@ import com.example.mvryan.ngoprekpc.Fragment.VgaFragment;
 
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    private  Context mContext;
+    private Context mContext;
 
     public SimpleFragmentPagerAdapter(Context context,FragmentManager fm) {
         super(fm);

@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.example.mvryan.ngoprekpc.CustomGrid.HddGrid;
 import com.example.mvryan.ngoprekpc.CustomGrid.ProcGrid;
 import com.example.mvryan.ngoprekpc.Detail.DetailActivityProc;
 import com.example.mvryan.ngoprekpc.R;
@@ -75,7 +74,7 @@ public class ProcFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_proc,null);
+        View view = inflater.inflate(R.layout.fragment_view,null);
 
         gridView = view.findViewById(R.id.grid_view);
         final ProcGrid adapterGrid = new ProcGrid(getContext());

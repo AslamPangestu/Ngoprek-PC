@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.mvryan.ngoprekpc.CustomGrid.HddGrid;
 import com.example.mvryan.ngoprekpc.CustomGrid.ProcGrid;
 import com.example.mvryan.ngoprekpc.R;
+import com.example.mvryan.ngoprekpc.SimpleFragmentPagerAdapter;
 
 /**
  * Created by mvryan on 28/12/17.
